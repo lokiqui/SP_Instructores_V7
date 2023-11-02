@@ -1,0 +1,7 @@
+{
+  "name": "angular-firebase-access",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom"
+}

@@ -1,0 +1,8 @@
+.mat-mdc-button {
+  outline: none !important;
+
+  &:focus {
+    background-color: #475364;
+    border: 0;
+  }
+}

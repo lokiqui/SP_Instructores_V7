@@ -1,0 +1,77 @@
+<section>
+  <mat-panel-title> Formulario de Instructores </mat-panel-title>
+  <br />
+  <br />
+  <mat-form-field>
+    <input matInput placeholder="Nombre" [(ngModel)]="nombre" name="Nombre" />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="DNI"
+      [(ngModel)]="dni"
+      name="DNI"
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>Nacionalidad</mat-label>
+    <select matNativeControl [(ngModel)]="nacionalidad" name="Nacionalidad">
+      <option value="Argentina">Argentina</option>
+      <option value="Brasil">Brasil</option>
+      <option value="Bolivia">Bolivia</option>
+      <option value="Chile">Chile</option>
+      <option value="Colombia">Colombia</option>
+      <option value="Ecuador">Ecuador</option>
+      <option value="Paraguay">Paraguay</option>
+      <option value="Peu">Peru</option>
+    </select>
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Foto"
+      [(ngModel)]="image"
+      name="image"
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Edad"
+      [(ngModel)]="edad"
+      name="Edad"
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>Sexo</mat-label>
+    <select matNativeControl [(ngModel)]="sexo" name="Sexo">
+      <option value="Masculino">Masculino</option>
+      <option value="Femenino">Femenino</option>
+      <option value="No Binario">No Binario</option>
+    </select>
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <textarea
+      matInput
+      placeholder="Comentarios"
+      [(ngModel)]="comentarios"
+      name="Comentarios"
+      rows="4"
+    ></textarea>
+  </mat-form-field>
+  <br />
+  <button
+    mat-raised-button
+    (click)="createPost()"
+    [disabled]="!nombre || !dni || !image || !sexo || !comentarios"
+    color="accent"
+  >
+    {{ buttonText }}
+  </button>
+</section>

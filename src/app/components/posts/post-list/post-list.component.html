@@ -1,0 +1,36 @@
+<head>
+  <meta
+    name="description"
+    content="Blog page uses Angular cards to display some technical posts that can be clicked on to show a more detailed page."
+  />
+</head>
+
+  <div fxLayout="row wrap">
+    <div
+      *ngFor="let post of posts; trackBy: trackByFn"
+      style="padding: 5px"
+    >
+      <!--mat-card for each post with data-binding from post.ts-->
+      <mat-card appearance="outlined" class="mat-elevation-z1" (click)="onSelectPost(post)">
+        <mat-card-content>
+          <p class="title-style">Nombre Completo: {{ post.nombre }}</p>
+          <p class="content-style" style="height: 30px">
+            <span class="subtitle-style">DNI: {{ post.dni }}</span>
+            <p>
+            <span class="subtitle-style">Nacionalidad: {{ post.nacionalidad }}</span>
+          </p>
+          <p>
+            <span class="small-text">
+              <app-svg-calender></app-svg-calender>
+              {{ post.published.toDate() | dateConvert }}
+              <app-svg-folder></app-svg-folder>
+              {{ post.sexo }}
+              <app-svg-timer></app-svg-timer>
+              {{ post.comentarios | readTime }} mins
+            </span>
+          </p>
+        </mat-card-content>
+      </mat-card>
+      <!-- </ng-container> -->
+    </div>
+  </div>
